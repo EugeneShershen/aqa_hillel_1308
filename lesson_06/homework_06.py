@@ -11,7 +11,7 @@ def homework_6_1():
     set_string = set(input_string)
 
     count_set_string = 0
-    for element in set_string:
+    for _ in set_string:
         count_set_string += 1
 
     if count_set_string > 10:
@@ -22,6 +22,7 @@ def homework_6_1():
     sep_line()
 
 
+# homework 6.2
 def homework_6_2():
     sep_line()
 
@@ -38,6 +39,20 @@ def homework_6_2():
     sep_line()
 
 
-# call functions 'homework_6_1()', 'homework_6_2()'
+# homework 6.3
+def homework_6_3():
+    sep_line()
+
+    list1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum']
+    list2 = [element for element in list1 if isinstance(element, str) is True]
+
+    print('Original list:', list1)
+    print('Result:', list2)
+
+    sep_line()
+
+
+# call functions 'homework_6_1()', 'homework_6_2()', 'homework_6_3()'
 homework_6_1()
 homework_6_2()
+homework_6_3()
