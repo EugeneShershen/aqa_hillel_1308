@@ -52,7 +52,25 @@ def homework_6_3():
     sep_line()
 
 
-# call functions 'homework_6_1()', 'homework_6_2()', 'homework_6_3()'
+# homework 6.4
+def homework_6_4():
+    sep_line()
+
+    list_numbers = [1, 14, 22, -4, 8, 31, 0, 29, 431, -81, 68, 50]
+    sum_even_numbers = 0
+
+    for num in list_numbers:
+        if num % 2 == 0:
+            sum_even_numbers += num
+
+    print('List with numbers:', list_numbers)
+    print('Summary of all even numbers in list:', sum_even_numbers)
+
+    sep_line()
+
+
+# call functions 'homework_6_1()', 'homework_6_2()', 'homework_6_3()', 'homework_6_4()'
 homework_6_1()
 homework_6_2()
 homework_6_3()
+homework_6_4()
