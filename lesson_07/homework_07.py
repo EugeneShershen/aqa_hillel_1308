@@ -9,29 +9,27 @@ def sep_line():
 Код майже готовий, треба знайти помилки та випраавити\доповнити.
 """
 def multiplication_table(number):
+    """Print the multiplication table of a given number
+    :param number: the given number
+    """
     # Initialize the appropriate variable
     multiplier = 1
 
     # Complete the while loop condition.
-    while multiplier <= number:
+    while multiplier <= 10:
         result = number * multiplier
-        # десь тут помила, а може не одна
-        if  result > "25":
-            # Enter the action to take if the result is greater than 25
-            pass
+        if  result > 25:
+            break
         print(str(number) + "x" + str(multiplier) + "=" + str(result))
 
         # Increment the appropriate variable
-        multi += 1
+        multiplier += 1
 
+    sep_line()
+
+
+sep_line()
 multiplication_table(3)
-# Should print:
-# 3x1=3
-# 3x2=6
-# 3x3=9
-# 3x4=12
-# 3x5=15
-
 
 # task 2
 """  Написати функцію, яка обчислює суму двох чисел.
