@@ -36,19 +36,19 @@ multiplication_table(3)
 """  Написати функцію, яка обчислює суму двох чисел.
 """
 
-def sum_two_num(num1, num2):
-    """Sum of two numbers.
+def add_two_num(num1, num2):
+    """Adds two numbers.
     :param num1: the first number
     :param num2: the second number
     """
-    print('Sum of two numbers:', num1 + num2)
+    print('The adds of two numbers:', num1 + num2)
 
     sep_line()
 
 
 sep_line()
 print('Task 2\n')
-sum_two_num(3, 5)
+add_two_num(3, 5)
 
 # task 3
 """  Написати функцію, яка розрахує середнє арифметичне списку чисел.
@@ -199,6 +199,26 @@ list1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum'
 create_string_list(list1)
 
 # task 10
+def sum_even_number(list_numbers):
+    """Sums up all even numbers from number's list.
+    :param list_numbers: list of numbers
+    """
+    sum_even_numbers = 0
+
+    for num in list_numbers:
+        if num % 2 == 0:
+            sum_even_numbers += num
+
+    print('List with numbers:', list_numbers)
+    print('Sum of all even numbers in list:', sum_even_numbers)
+
+    sep_line()
+
+sep_line()
+print('Task 10\n')
+list2 = [1, 14, 22, -4, 8, 31, 0, 29, 431, -81, 68, 50]
+sum_even_number(list2)
+
 """  Оберіть будь-які 4 таски з попередніх домашніх робіт та
 перетворіть їх у 4 функції, що отримують значення та повертають результат.
 Обоязково документуйте функції та дайте зрозумілі імена змінним.
