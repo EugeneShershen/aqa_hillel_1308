@@ -112,17 +112,30 @@ sep_line()
 """  Написати функцію, яка приймає два рядки та повертає індекс першого входження другого рядка
 у перший рядок, якщо другий рядок є підрядком першого рядка, та -1, якщо другий рядок
 не є підрядком першого рядка."""
-# def find_substring(str1, str2):
-#
-#     return -1
-#
-# str1 = "Hello, world!"
-# str2 = "world"
-# print(find_substring(str1, str2)) # поверне 7
-#
-# str1 = "The quick brown fox jumps over the lazy dog"
-# str2 = "cat"
-# print(find_substring(str1, str2)) # поверне -1
+def find_substring(str1: str, str2: str):
+    """Finds the substring in the string.
+    :param str1: the main string
+    :param str2: the substring
+    """
+    first_index = str1.find(str2)
+    if first_index == -1:
+        return -1
+    else:
+        return first_index
+
+
+sep_line()
+print('Task 6\n')
+
+string1 = "Hello, world!"
+string2 = "world"
+print(f'The result of searching "{string2}" in "{string1}":', find_substring(string1, string2)) # поверне 7
+
+string1 = "The quick brown fox jumps over the lazy dog"
+string2 = "cat"
+print(f'The result of searching "{string2}" in "{string1}":', find_substring(string1, string2)) # поверне -1
+
+sep_line()
 
 # task 7
 # task 8
