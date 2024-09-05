@@ -90,6 +90,24 @@ sep_line()
 """  Написати функцію, яка приймає список слів та повертає найдовше слово у списку.
 """
 
+def longest_word_in_list(word_list):
+    """Return the longest word in the list.
+    :param word_list: list of words
+    """
+    longest_word = ''
+    for word in word_list:
+        if len(word) > len(longest_word):
+            longest_word = word
+
+    return longest_word
+
+
+sep_line()
+print('Task 5\n')
+fruit_list = ['apple', 'pear', 'banana', 'plum', 'peach']
+print('The longest word in the list:', longest_word_in_list(fruit_list))
+sep_line()
+
 # task 6
 """  Написати функцію, яка приймає два рядки та повертає індекс першого входження другого рядка
 у перший рядок, якщо другий рядок є підрядком першого рядка, та -1, якщо другий рядок
