@@ -54,7 +54,7 @@ sum_two_num(3, 5)
 """
 
 def arithmetic_mean_of_list(num_list):
-    """Calculates an arithmetic mean of number's list.
+    """Calculates an arithmetic mean of the number's list.
     :param num_list: list of numbers
     """
     sum_num = 0
@@ -73,6 +73,18 @@ arithmetic_mean_of_list([4, 5, 6, 7, 8, 9])
 # task 4
 """  Написати функцію, яка приймає рядок та повертає його у зворотному порядку.
 """
+
+def reverted_string(string):
+    """Reverts the string.
+    :param string: input string
+    """
+    return string[::-1]
+
+
+sep_line()
+print('Task 4\n')
+print('The reverted string:', reverted_string('Hellow, user!'))
+sep_line()
 
 # task 5
 """  Написати функцію, яка приймає список слів та повертає найдовше слово у списку.
