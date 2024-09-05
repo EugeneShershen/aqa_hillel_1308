@@ -46,6 +46,7 @@ def sum_two_num(num1, num2):
     sep_line()
 
 
+sep_line()
 print('Task 2\n')
 sum_two_num(3, 5)
 
@@ -67,6 +68,7 @@ def arithmetic_mean_of_list(num_list):
     sep_line()
 
 
+sep_line()
 print('Task 3\n')
 arithmetic_mean_of_list([4, 5, 6, 7, 8, 9])
 
@@ -138,6 +140,28 @@ print(f'The result of searching "{string2}" in "{string1}":', find_substring(str
 sep_line()
 
 # task 7
+
+def count_unique_symbol():
+    """Counts the unique symbols in the input string.
+    """
+    input_string = input('Enter anything: ')
+    set_string = set(input_string)
+
+    count_set_string = len(set_string)
+    print('\nIs the unique symbols more than 10?')
+
+    if count_set_string > 10:
+        print('Yes')
+    else:
+        print('No')
+
+    sep_line()
+
+
+sep_line()
+print('Task 7\n')
+count_unique_symbol()
+
 # task 8
 # task 9
 # task 10
