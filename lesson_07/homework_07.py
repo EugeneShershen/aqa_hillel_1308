@@ -9,7 +9,7 @@ def sep_line():
 Код майже готовий, треба знайти помилки та випраавити\доповнити.
 """
 def multiplication_table(number):
-    """Print the multiplication table of a given number
+    """Print the multiplication table of a given number.
     :param number: the given number
     """
     # Initialize the appropriate variable
@@ -41,7 +41,6 @@ def sum_two_num(num1, num2):
     :param num1: the first number
     :param num2: the second number
     """
-    # print the result of the sum of the two numbers
     print('Sum of two numbers:', num1 + num2)
 
     sep_line()
@@ -53,6 +52,23 @@ sum_two_num(3, 5)
 # task 3
 """  Написати функцію, яка розрахує середнє арифметичне списку чисел.
 """
+
+def arithmetic_mean_of_list(num_list):
+    """Calculates an arithmetic mean of number's list.
+    :param num_list: list of numbers
+    """
+    sum_num = 0
+    for num in num_list:
+        sum_num += num
+
+    arithmetic_mean = sum_num / len(num_list)
+    print('The arithmetic mean of number\'s list:', arithmetic_mean)
+
+    sep_line()
+
+
+print('Task 3\n')
+arithmetic_mean_of_list([4, 5, 6, 7, 8, 9])
 
 # task 4
 """  Написати функцію, яка приймає рядок та повертає його у зворотному порядку.
