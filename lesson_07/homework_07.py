@@ -29,12 +29,26 @@ def multiplication_table(number):
 
 
 sep_line()
+print('Task 1\n')
 multiplication_table(3)
 
 # task 2
 """  Написати функцію, яка обчислює суму двох чисел.
 """
 
+def sum_two_num(num1, num2):
+    """Sum of two numbers.
+    :param num1: the first number
+    :param num2: the second number
+    """
+    # print the result of the sum of the two numbers
+    print('Sum of two numbers:', num1 + num2)
+
+    sep_line()
+
+
+print('Task 2\n')
+sum_two_num(3, 5)
 
 # task 3
 """  Написати функцію, яка розрахує середнє арифметичне списку чисел.
@@ -52,17 +66,17 @@ multiplication_table(3)
 """  Написати функцію, яка приймає два рядки та повертає індекс першого входження другого рядка
 у перший рядок, якщо другий рядок є підрядком першого рядка, та -1, якщо другий рядок
 не є підрядком першого рядка."""
-def find_substring(str1, str2):
-
-    return -1
-
-str1 = "Hello, world!"
-str2 = "world"
-print(find_substring(str1, str2)) # поверне 7
-
-str1 = "The quick brown fox jumps over the lazy dog"
-str2 = "cat"
-print(find_substring(str1, str2)) # поверне -1
+# def find_substring(str1, str2):
+#
+#     return -1
+#
+# str1 = "Hello, world!"
+# str2 = "world"
+# print(find_substring(str1, str2)) # поверне 7
+#
+# str1 = "The quick brown fox jumps over the lazy dog"
+# str2 = "cat"
+# print(find_substring(str1, str2)) # поверне -1
 
 # task 7
 # task 8
