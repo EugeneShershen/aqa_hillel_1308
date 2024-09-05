@@ -182,6 +182,22 @@ print('Task 8\n')
 check_h_in_word()
 
 # task 9
+def create_string_list(orig_list):
+    """Creates a new list from the original list only with 'string' elements.
+    :param orig_list: original list
+    """
+    filtered_list = [element for element in orig_list if isinstance(element, str) is True]
+
+    print('Original list:', orig_list)
+    print('Result:', filtered_list)
+
+    sep_line()
+
+sep_line()
+print('Task 9\n')
+list1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum']
+create_string_list(list1)
+
 # task 10
 """  Оберіть будь-які 4 таски з попередніх домашніх робіт та
 перетворіть їх у 4 функції, що отримують значення та повертають результат.
