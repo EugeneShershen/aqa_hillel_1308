@@ -140,7 +140,6 @@ print(f'The result of searching "{string2}" in "{string1}":', find_substring(str
 sep_line()
 
 # task 7
-
 def count_unique_symbol():
     """Counts the unique symbols in the input string.
     """
@@ -163,6 +162,25 @@ print('Task 7\n')
 count_unique_symbol()
 
 # task 8
+def check_h_in_word():
+    """Checks the letter 'h' in input word.
+    """
+    input_string = ''
+    in_while = True
+
+    while in_while:
+        input_string = input('Enter a word with the letter "h": ')
+        if input_string.find('h') != -1 or input_string.find('H') != -1:
+            in_while = False
+
+    print('The word you entered:', input_string)
+
+    sep_line()
+
+sep_line()
+print('Task 8\n')
+check_h_in_word()
+
 # task 9
 # task 10
 """  Оберіть будь-які 4 таски з попередніх домашніх робіт та
