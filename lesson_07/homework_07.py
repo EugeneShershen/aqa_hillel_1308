@@ -18,7 +18,7 @@ def multiplication_table(number):
     # Complete the while loop condition.
     while multiplier <= 10:
         result = number * multiplier
-        if  result > 25:
+        if result > 25:
             break
         print(str(number) + "x" + str(multiplier) + "=" + str(result))
 
@@ -58,9 +58,7 @@ def arithmetic_mean_of_list(num_list):
     """Calculates an arithmetic mean of the number's list.
     :param num_list: list of numbers
     """
-    sum_num = 0
-    for num in num_list:
-        sum_num += num
+    sum_num= sum(num_list)
 
     arithmetic_mean = sum_num / len(num_list)
     print('The arithmetic mean of number\'s list:', arithmetic_mean)
@@ -96,10 +94,7 @@ def longest_word_in_list(word_list):
     """Return the longest word in the list.
     :param word_list: list of words
     """
-    longest_word = ''
-    for word in word_list:
-        if len(word) > len(longest_word):
-            longest_word = word
+    longest_word = max(word_list, key=len)
 
     return longest_word
 
