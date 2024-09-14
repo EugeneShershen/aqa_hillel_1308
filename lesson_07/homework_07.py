@@ -58,7 +58,7 @@ def arithmetic_mean_of_list(num_list):
     """Calculates an arithmetic mean of the number's list.
     :param num_list: list of numbers
     """
-    sum_num= sum(num_list)
+    sum_num = sum(num_list)
 
     arithmetic_mean = sum_num / len(num_list)
     print('The arithmetic mean of number\'s list:', arithmetic_mean)
