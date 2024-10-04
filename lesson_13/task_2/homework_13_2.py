@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 import logging
 
 logger = logging.getLogger(__name__)
@@ -24,13 +25,14 @@ def is_all_files_json(dir_path):
     all_files = [file for file in dir_path.iterdir() if file.is_file()]
 
     for file in all_files:
-        file_name = file.name
-        log_message_info = f'Suffix of the {file_name} is ".json"'
-        log_message_error = f'Suffix of the current file is NOT ".json"'
+        log_message_info = f'{file.name} is valid'
+        log_message_error = f'{file.name} is invalid'
 
-        if file.suffix == '.json':
+        try:
+            with open(file, 'r', encoding='utf-8') as cur_file:
+                data = json.load(cur_file)
             logger.info(log_message_info)
-        else:
+        except json.JSONDecodeError:
             logger.error(log_message_error)
 
 
