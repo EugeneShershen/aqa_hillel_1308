@@ -18,7 +18,6 @@ class ElementActions:
         except TimeoutException:
             raise NoSuchElementException(f"No element found with locator {locator[1]}")
 
-    # ???
     def click(self, locator: tuple[By, str], timeout: int = 5):
         self.find(locator, timeout).click()
 
