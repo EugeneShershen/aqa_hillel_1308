@@ -1,16 +1,20 @@
-from pytest import mark, raises
-from assertpy import assert_that
+import allure
+from pytest import mark
 
 from lesson_29.src.student_table import StudentTable
 from lesson_29.data.tests_data_cud import students_cud
 from lesson_29.data.tests_data_search import students_search
+from lesson_29.src.assertions.assetions_student_table import AssertionsStudentTable
 
 
+@allure.feature("Table 'Student'")
 class TestCourseTable:
     """Test-class for 'Student' table of the database.
     """
     st = StudentTable()
+    assertion = AssertionsStudentTable()
 
+    @allure.title("Add")
     @mark.parametrize('student', [
         students_cud[1],
         students_cud[2],
@@ -27,8 +31,9 @@ class TestCourseTable:
         student_id = self.st.get_student_id_by_name_age(name, age)
         received_name = self.st.get_student_name_by_id(student_id)
 
-        assert_that(received_name).is_equal_to(name)
+        self.assertion.assert_add(received_name, name)
 
+    @allure.title("Update")
     @mark.parametrize('student', [
         students_cud[1],
         students_cud[2],
@@ -46,8 +51,9 @@ class TestCourseTable:
         self.st.update_student(student_id=student_id, updated_name=new_name, updated_age=new_age)
         received_name = self.st.get_student_name_by_id(student_id)
 
-        assert_that(received_name).is_equal_to(new_name)
+        self.assertion.assert_update(received_name, new_name)
 
+    @allure.title("Delete")
     @mark.parametrize('student', [
         students_cud[1],
         students_cud[2],
@@ -62,9 +68,9 @@ class TestCourseTable:
         student_id = self.st.get_student_id_by_name_age(new_name, new_age)
         self.st.delete_student(student_id=student_id)
 
-        with raises(TypeError):
-            self.st.get_student_name_by_id(student_id)
+        self.assertion.assert_delete(student_id)
 
+    @allure.title("Get students by course name")
     @mark.parametrize('student', [
         students_search[1],
         students_search[2],
@@ -78,4 +84,4 @@ class TestCourseTable:
 
         result = self.st.student_list_of_certain_course(course_name=course_name)
 
-        assert_that(result).is_equal_to(student_info)
+        self.assertion.assert_get_students_by_course_name(result, student_info)

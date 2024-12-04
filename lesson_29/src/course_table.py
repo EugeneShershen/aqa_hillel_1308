@@ -1,3 +1,4 @@
+import allure
 import psycopg2
 
 from lesson_29.src.db_tables import Course, Student, RegistrationList
@@ -10,6 +11,7 @@ class CourseTable(DataBase):
     def __init__(self):
         super().__init__()
 
+    @allure.step("Get course name by name")
     def get_course_name_by_name(self, course_name):
         """Returns a course name by its name.
         """
@@ -18,6 +20,7 @@ class CourseTable(DataBase):
 
         return received_name
 
+    @allure.step("Add course")
     def add_course(self, name: str):
         """ Adds a new object "Course" to the database.
         """
@@ -30,6 +33,7 @@ class CourseTable(DataBase):
         except (Exception, psycopg2.Error) as error:
             self.logger.error(str(error))
 
+    @allure.step("Update course")
     def update_course(self, course_name: str, updated_name: str):
         """ Updates an information about a certain object "Course".
         """
@@ -48,6 +52,7 @@ class CourseTable(DataBase):
         except (Exception, psycopg2.Error) as error:
             self.logger.error(str(error))
 
+    @allure.step("Delete course")
     def delete_course(self, course_name: str):
         """ Deletes a certain object "Course" from the database.
         """
@@ -67,8 +72,9 @@ class CourseTable(DataBase):
         except (Exception, psycopg2.Error) as error:
             self.logger.error(str(error))
 
+    @allure.step("Get courses by student id")
     def course_list_of_certain_student(self, student_id: int):
-        """ Prints and returns a list of courses by the specified student id.
+        """ Returns a list of courses by the specified student id.
         """
         try:
             self.logger.info(f"Getting courses of the student with an id '{student_id}'")

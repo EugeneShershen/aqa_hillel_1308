@@ -1,16 +1,20 @@
-from pytest import mark, raises
-from assertpy import assert_that
+import allure
+from pytest import mark
 
 from lesson_29.src.course_table import CourseTable
 from lesson_29.data.tests_data_cud import courses_cud
 from lesson_29.data.tests_data_search import courses_search
+from lesson_29.src.assertions.assetions_course_table import AssertionsCourseTable
 
 
+@allure.feature("Table 'Course'")
 class TestCourseTable:
     """Test-class for 'Course' table of the database.
     """
     ct = CourseTable()
+    assertion = AssertionsCourseTable()
 
+    @allure.title('Add')
     @mark.parametrize('course', [
         courses_cud[1],
         courses_cud[2],
@@ -24,8 +28,9 @@ class TestCourseTable:
         self.ct.add_course(name=name)
         received_name = self.ct.get_course_name_by_name(name)
 
-        assert_that(received_name).is_equal_to(name)
+        self.assertion.assert_add(received_name, name)
 
+    @allure.title('Update')
     @mark.parametrize('course', [
         courses_cud[1],
         courses_cud[2],
@@ -40,8 +45,9 @@ class TestCourseTable:
         self.ct.update_course(course_name=old_name, updated_name=new_name)
         received_name = self.ct.get_course_name_by_name(new_name)
 
-        assert_that(received_name).is_equal_to(new_name)
+        self.assertion.assert_update(received_name, new_name)
 
+    @allure.title('Delete')
     @mark.parametrize('course', [
         courses_cud[1],
         courses_cud[2],
@@ -54,9 +60,9 @@ class TestCourseTable:
 
         self.ct.delete_course(course_name=name)
 
-        with raises(TypeError):
-            self.ct.get_course_name_by_name(name)
+        self.assertion.assert_delete(name)
 
+    @allure.title('Get courses by student id')
     @mark.parametrize('course', [
         courses_search[1],
         courses_search[2],
@@ -70,4 +76,4 @@ class TestCourseTable:
 
         result = self.ct.course_list_of_certain_student(student_id=student_id)
 
-        assert_that(result).is_equal_to(course_info)
+        self.assertion.assert_get_courses_by_student_id(result, course_info)
