@@ -1,3 +1,4 @@
+import allure
 import logging
 import psycopg2
 from sqlalchemy import create_engine
@@ -25,6 +26,7 @@ class DataBase:
         except (Exception, psycopg2.Error) as error:
             self.logger.error(str(error))
 
+    @allure.step("Create tables")
     def create_tables(self):
         """Creates tables into the database.
         """

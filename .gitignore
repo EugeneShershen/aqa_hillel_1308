@@ -1,5 +1,8 @@
 lesson_29/local_reports
 .idea/
+allure-results
+allure-report
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
